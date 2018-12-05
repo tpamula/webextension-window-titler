@@ -4,6 +4,7 @@ class WindowTitleManager {
 		
 		let currentWindow = await window.browser.windows.getCurrent();
 		browser.windows.update(currentWindow.id, { titlePreface: computedTitle });
+			.then(window.close());
 	}
 }
 
