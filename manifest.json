@@ -6,10 +6,15 @@
 	"browser_action": {
 		"default_title": "Window titler",
 		"default_popup": "popup.html",
-		"default_icon": "icons/icon-transparent-32.png"
+		"default_icon": "icons/icon-32.png"
 	},
 	"icons": {
+		"24": "icons/icon-24.png",
+		"32": "icons/icon-32.png",
 		"48": "icons/icon-48.png",
-		"96": "icons/icon-96.png"
+		"64": "icons/icon-64.png",
+		"96": "icons/icon-96.png",
+		"128": "icons/icon-128.png",
+		"256": "icons/icon-256.png"
 	}
 }
