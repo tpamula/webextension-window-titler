@@ -9,15 +9,13 @@
 		"default_icon": "icons/icon-32.png"
 	},
 	"icons": {
+		"16": "icons/icon-16.png",
+		"24": "icons/icon-24.png",
+		"32": "icons/icon-32.png",
 		"48": "icons/icon-48.png",
+		"64": "icons/icon-64.png",
 		"96": "icons/icon-96.png",
-		"16": "icons/ico_v3_16.png",
-		"24": "icons/ico_v3_24.png",
-		"32": "icons/ico_v3_32.png",
-		"48": "icons/ico_v3_48.png",
-		"64": "icons/ico_v3_64.png",
-		"96": "icons/ico_v3_96.png",
-		"128": "icons/ico_v3_128.png",
-		"256": "icons/ico_v3_256.png"
+		"128": "icons/icon-128.png",
+		"256": "icons/icon-256.png"
 	}
 }
