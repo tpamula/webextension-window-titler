@@ -6,9 +6,39 @@
 	"browser_action": {
 		"default_title": "Window titler",
 		"default_popup": "popup.html",
-		"default_icon": "icons/icon-32.png"
+		"default_icon": "icons/icon-32.png",
+		"theme_icons": [{
+			"light": "icons/icon-w-16.png",
+			"dark": "icons/icon-16.png",
+			"size": 16
+		  }, {
+			"light": "icons/icon-w-32.png",
+			"dark": "icons/icon-32.png",
+			"size": 32
+		  }, {
+			"light": "icons/icon-w-48.png",
+			"dark": "icons/icon-48.png",
+			"size": 48
+		  }, {
+			"light": "icons/icon-w-64.png",
+			"dark": "icons/icon-64.png",
+			"size": 64
+		  }, {
+			"light": "icons/icon-w-96.png",
+			"dark": "icons/icon-96.png",
+			"size": 96
+		  }, {
+			"light": "icons/icon-w-128.png",
+			"dark": "icons/icon-128.png",
+			"size": 128
+			}, {
+			"light": "icons/icon-w-256.png",
+			"dark": "icons/icon-256.png",
+			"size": 256
+			}]
 	},
 	"icons": {
+		"16": "icons/icon-16.png",
 		"24": "icons/icon-24.png",
 		"32": "icons/icon-32.png",
 		"48": "icons/icon-48.png",
