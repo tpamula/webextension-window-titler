@@ -1,6 +1,3 @@
-<!DOCTYPE html>
-<html>
-<style>
 body{
 	background-color: #f9f9fa;
 	font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";
@@ -100,22 +97,3 @@ p {
     margin-top: 0;
     margin-bottom: 0.3rem;
 }
-</style>
-<head>
-	<meta charset="utf-8" />
-</head>
-
-<<<<<<< HEAD
-<body class="dark">
-	<form id="window-title-prefix-form" class="dark">
-		<p class="lead">Set the window title prefix: </p><input class="form-control" id="title-input" type="text" /> <input class="btn btn-default" id="set-window-title-prefix" type="submit" value="OK" />
-=======
-<body>
-	<form id="window-title-prefix-form">
-		Set the window title prefix: <input id="title-input" type="text" autofocus/> <input id="set-window-title-prefix" type="submit" value="OK" />
->>>>>>> master
-	</form>
-	<script src="popup.js"></script>
-</body>
-
-</html>
