@@ -7,7 +7,7 @@ A Firefox extension that lets you add a custom per-window title. Useful if you l
 ## Usage
 Window Titler adds prefix to the browser's system window title bar. Please note the title bar is disabled by default in Firefox but can easily be enabled. The added prefix can be seen in the system's task switcher as well.
 
-You can invoke Window Titler simply by pressing its toolbar button.
+You can invoke Window Titler simply by pressing its toolbar button or by using the shortcut: **Ctrl-Alt-T**.
 
 ### Useful links
 * Enabling the title bar: https://support.mozilla.org/en-US/kb/customize-firefox-controls-buttons-and-toolbars
@@ -17,4 +17,4 @@ If you want to keep the title bar & move the tabs to the sidebar:
 * Hiding the tab bar: https://superuser.com/questions/1261660/firefox-quantum-ver-57-how-can-i-hide-the-horizontal-tab-bar-with-treesty
 
 ## Acknowledgements
-Icon provided by Grzegorz Koncewicz ([GitHub profile](https://github.com/orchee)).
+The icons & some features were provided by Grzegorz Koncewicz ([GitHub profile](https://github.com/orchee)).
