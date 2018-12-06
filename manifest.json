@@ -41,6 +41,13 @@
 			"size": 256
 			}]
 	},
+	"commands": {
+        "_execute_browser_action": {
+            "suggested_key": {
+                "default": "Alt+Ctrl+T"
+            }
+        }
+    },
 	"icons": {
 		"16": "icons/dark/icon-16.png",
 		"24": "icons/dark/icon-24.png",
