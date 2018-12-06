@@ -11,7 +11,11 @@
 			"light": "icons/icon-w-16.png",
 			"dark": "icons/icon-16.png",
 			"size": 16
-		  }, {
+			}, {
+			"light": "icons/icon-w-24.png",
+			"dark": "icons/icon-24.png",
+			"size": 24
+			}, {
 			"light": "icons/icon-w-32.png",
 			"dark": "icons/icon-32.png",
 			"size": 32
