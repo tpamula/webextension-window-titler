@@ -1,7 +1,7 @@
 {
 	"manifest_version": 2,
 	"name": "Window Titler",
-	"version": "1.1.1",
+	"version": "1.1.2",
 	"description": "Lets you add a custom per-window title. Useful if you like to have topically themed Firefox windows.",
 	"browser_action": {
 		"default_title": "Window titler",
