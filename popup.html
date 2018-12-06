@@ -10,6 +10,13 @@ body{
 	color: #212529;
 	text-align: left;
 }
+
+body.dark{
+	background-color: #212529;
+	color: #f9f9fa;
+
+}
+
 .btn {
 	display: inline-block;
 	padding: 6px 12px;
@@ -50,6 +57,16 @@ button, input {
 	background-color: #e6e6e6;
 	border-color: #adadad;
 }
+.dark > .btn-default {
+	color: #fff;
+	background-color: #444;
+	border-color: #444;
+}
+.dark > .btn-default:hover {
+	background-color: #313131;
+	border-color: #2b2a2a;
+}
+
 .form-control {
 	display: inline-block;
 	/* width: 100%; */
@@ -68,6 +85,13 @@ button, input {
 	-o-transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;
 	transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;
 }
+
+.dark > .form-control {
+	color: #fff;
+	background-color: #313131;
+	border-color: #2b2a2a;
+}
+
 .lead {
     font-size: 1.1rem;
     font-weight: 300;
@@ -81,7 +105,7 @@ p {
 	<meta charset="utf-8" />
 </head>
 
-<body>
+<body class="dark">
 	<form id="window-title-prefix-form">
 		<p class="lead">Set the window title prefix: </p><input class="form-control" id="title-input" type="text" /> <input class="btn btn-default" id="set-window-title-prefix" type="submit" value="OK" />
 	</form>
