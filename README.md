@@ -1,6 +1,6 @@
 # Window Titler
 
-![icon](icons/icon-128.png)
+![icon](icons/dark/icon-128.png)
 
 A Firefox extension that lets you add a custom per-window title. Useful if you like to have topically themed Firefox windows.
 
