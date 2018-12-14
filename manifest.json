@@ -1,10 +1,10 @@
 {
 	"manifest_version": 2,
 	"name": "Window Titler",
-	"version": "1.1.3",
+	"version": "1.1.4",
 	"description": "Lets you add a custom per-window title. Useful if you like to have topically themed Firefox windows.",
 	"browser_action": {
-		"default_title": "Window Titler",
+		"default_title": "Window Titler (Ctrl+Alt+T)",
 		"default_popup": "popup.html",
 		"default_icon": "icons/dark/icon-32.png",
 		"theme_icons": [{
