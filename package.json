@@ -1,0 +1,25 @@
+{
+  "name": "webextension-window-titler",
+  "version": "1.0.0",
+  "description": "![icon](icons/dark/icon-128.png)",
+  "main": "background.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tpamula/webextension-window-titler.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/tpamula/webextension-window-titler/issues"
+  },
+  "homepage": "https://github.com/tpamula/webextension-window-titler#readme",
+  "devDependencies": {
+    "eslint": "^5.13.0",
+    "eslint-config-airbnb-base": "^13.1.0",
+    "eslint-plugin-import": "^2.16.0"
+  }
+}

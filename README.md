@@ -11,10 +11,11 @@ You can invoke Window Titler simply by pressing its toolbar button or by using t
 
 ### Useful links
 * Enabling the title bar: https://support.mozilla.org/en-US/kb/customize-firefox-controls-buttons-and-toolbars
-
+    * Tick the "Title bar" checkbox in the customisation screen.
+    
 If you want to keep the title bar & move the tabs to the sidebar:
 * Tree Style Tab: https://addons.mozilla.org/en-US/firefox/addon/tree-style-tab/
 * Hiding the tab bar: https://superuser.com/questions/1261660/firefox-quantum-ver-57-how-can-i-hide-the-horizontal-tab-bar-with-treesty
 
 ## Acknowledgements
-The icons & some features were provided by Grzegorz Koncewicz ([GitHub profile](https://github.com/orchee)).
+The icons & some of the features were provided by Grzegorz Koncewicz ([GitHub profile](https://github.com/orchee)).
