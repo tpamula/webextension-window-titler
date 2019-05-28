@@ -1,9 +1,9 @@
-function setTitle(title) {
-  const computedTitle = title ? `[${title}] ` : '';
+async function setTitle(title) {
+  const currentWindow = await window.browser.windows.getCurrent();
 
-  return window.browser.windows.getCurrent().then(currentWindow => Promise.all([
-    browser.windows.update(currentWindow.id, { titlePreface: computedTitle }),
-    browser.sessions.setWindowValue(currentWindow.id, 'title', computedTitle)]));
+  await browser.sessions.setWindowValue(currentWindow.id, 'title', title);
+
+  return setWindowTitle(currentWindow.id);
 }
 
 document.getElementById('window-title-prefix-form').addEventListener('submit', async (e) => {

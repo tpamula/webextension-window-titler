@@ -1,0 +1,12 @@
+form#titler_options {
+    display: table;
+}
+form#titler_options > * {
+    display: table-row;
+}
+form#titler_options > * > * {
+    display: table-cell;
+}
+form#titler_options > * > *:first-child {
+    padding-right: 1em;
+}

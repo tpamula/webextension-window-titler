@@ -8,6 +8,11 @@
       "id": "{35dd5f9a-ca89-4643-b107-f07d09cc94b5}"
     }
   },
+  "options_ui": {
+    "page": "options/options.html",
+    "browser_style": true,
+    "chrome_style": true
+  },
   "browser_action": {
     "default_title": "Window Titler (Ctrl+Alt+T)",
     "default_popup": "popup.html",
@@ -73,10 +78,12 @@
     "256": "icons/dark/icon-256.png"
   },
   "permissions": [
-    "sessions"
+    "sessions",
+    "storage"
   ],
   "background": {
     "scripts": [
+      "lib.js",
       "background.js"
     ]
   }
