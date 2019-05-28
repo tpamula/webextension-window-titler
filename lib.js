@@ -6,7 +6,7 @@ function computeTitle(title) {
 
   return getting.then((result) => {
     const computedTitle = result.prefix
-      + (result.prefix && title && result.prefixGlue)
+      + ((result.prefix && title && result.prefixGlue) || '')
       + (title || '');
 
     return computedTitle ? `[${computedTitle}] ` : '';
