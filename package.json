@@ -2,7 +2,7 @@
   "name": "webextension-window-titler",
   "version": "1.0.0",
   "description": "![icon](icons/dark/icon-128.png)",
-  "main": "background.js",
+  "main": "src/presentation/background/background.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
