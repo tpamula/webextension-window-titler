@@ -1,13 +1,3 @@
-function restoreWindowTitles() {
-  browser.windows.getAll((windows) => {
-    windows.map(window => window.id).forEach((windowId) => {
-      browser.sessions.getWindowValue(windowId, 'title').then((title) => {
-        if (title) browser.windows.update(windowId, { titlePreface: title });
-      });
-    });
-  });
-}
-
 // Needs to listen in case the user restores windows by clicking the restore button in the session
 // manager window.
 // http://kb.mozillazine.org/Browser.sessionstore.max_resumed_crashes
@@ -16,6 +6,10 @@ function restoreWindowTitles() {
 // to this one instead.
 browser.tabs.onCreated.addListener(() => {
   restoreWindowTitles();
+});
+
+browser.windows.onCreated.addListener((window) => {
+  restoreWindowTitle(window);
 });
 
 // Needs to run if the session is restored automatically, without the session manager window.
