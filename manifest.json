@@ -8,49 +8,54 @@
       "id": "{35dd5f9a-ca89-4643-b107-f07d09cc94b5}"
     }
   },
+  "options_ui": {
+    "page": "/src/presentation/options/options.html",
+    "browser_style": true,
+    "chrome_style": true
+  },
   "browser_action": {
     "default_title": "Window Titler (Ctrl+Alt+T)",
-    "default_popup": "popup.html",
-    "default_icon": "icons/dark/icon-32.png",
+    "default_popup": "/src/presentation/popup/popup.html",
+    "default_icon": "/assets/icons/dark/icon-32.png",
     "theme_icons": [
       {
-        "light": "icons/light/icon-w-16.png",
-        "dark": "icons/dark/icon-16.png",
+        "light": "/assets/icons/light/icon-w-16.png",
+        "dark": "/assets/icons/dark/icon-16.png",
         "size": 16
       },
       {
-        "light": "icons/light/icon-w-24.png",
-        "dark": "icons/dark/icon-24.png",
+        "light": "/assets/icons/light/icon-w-24.png",
+        "dark": "/assets/icons/dark/icon-24.png",
         "size": 24
       },
       {
-        "light": "icons/light/icon-w-32.png",
-        "dark": "icons/dark/icon-32.png",
+        "light": "/assets/icons/light/icon-w-32.png",
+        "dark": "/assets/icons/dark/icon-32.png",
         "size": 32
       },
       {
-        "light": "icons/light/icon-w-48.png",
-        "dark": "icons/dark/icon-48.png",
+        "light": "/assets/icons/light/icon-w-48.png",
+        "dark": "/assets/icons/dark/icon-48.png",
         "size": 48
       },
       {
-        "light": "icons/light/icon-w-64.png",
-        "dark": "icons/dark/icon-64.png",
+        "light": "/assets/icons/light/icon-w-64.png",
+        "dark": "/assets/icons/dark/icon-64.png",
         "size": 64
       },
       {
-        "light": "icons/light/icon-w-96.png",
-        "dark": "icons/dark/icon-96.png",
+        "light": "/assets/icons/light/icon-w-96.png",
+        "dark": "/assets/icons/dark/icon-96.png",
         "size": 96
       },
       {
-        "light": "icons/light/icon-w-128.png",
-        "dark": "icons/dark/icon-128.png",
+        "light": "/assets/icons/light/icon-w-128.png",
+        "dark": "/assets/icons/dark/icon-128.png",
         "size": 128
       },
       {
-        "light": "icons/light/icon-w-256.png",
-        "dark": "icons/dark/icon-256.png",
+        "light": "/assets/icons/light/icon-w-256.png",
+        "dark": "/assets/icons/dark/icon-256.png",
         "size": 256
       }
     ]
@@ -63,21 +68,20 @@
     }
   },
   "icons": {
-    "16": "icons/dark/icon-16.png",
-    "24": "icons/dark/icon-24.png",
-    "32": "icons/dark/icon-32.png",
-    "48": "icons/dark/icon-48.png",
-    "64": "icons/dark/icon-64.png",
-    "96": "icons/dark/icon-96.png",
-    "128": "icons/dark/icon-128.png",
-    "256": "icons/dark/icon-256.png"
+    "16": "/assets/icons/dark/icon-16.png",
+    "24": "/assets/icons/dark/icon-24.png",
+    "32": "/assets/icons/dark/icon-32.png",
+    "48": "/assets/icons/dark/icon-48.png",
+    "64": "/assets/icons/dark/icon-64.png",
+    "96": "/assets/icons/dark/icon-96.png",
+    "128": "/assets/icons/dark/icon-128.png",
+    "256": "/assets/icons/dark/icon-256.png"
   },
   "permissions": [
-    "sessions"
+    "sessions",
+    "storage"
   ],
   "background": {
-    "scripts": [
-      "background.js"
-    ]
+    "page": "/src/presentation/background/background.html"
   }
 }

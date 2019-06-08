@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta charset="utf-8"/>
+    <style type="text/css">
+        p { text-align: center; }
+        input { width: 100%; }
+    </style>
+</head>
+
+<body>
+<form id="options">
+    <fieldset>
+        <legend>Profile title settings</legend>
+        <p style="text-align: justify">
+            This setting allows you to define a prefix that will be used for all windows in the
+            current Firefox profile. You can distinguish your profiles with a custom prefix or
+            - if you don't use multiple profiles - simply set a global prefix for all Firefox
+            windows.
+        </p>
+        <p>
+            <label for="profile-title">Profile title:</label>
+            <input type="text" id="profile-title" maxlength="100"/>
+        </p>
+        <p>
+            <label for="profile-title-separator">Profile title separator (displayed only if profile
+                title is defined):</label>
+            <input type="text" id="profile-title-separator" maxlength="100"/>
+        </p>
+        <p>
+            <button type="button" id="restore-defaults">Restore defaults</button>
+            <button type="submit">Save</button>
+        </p>
+    </fieldset>
+</form>
+
+<script type="module" src="/src/WindowTitler.js"></script>
+<script type="module" src="options.js"></script>
+</body>
+</html>
