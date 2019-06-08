@@ -1,8 +1,14 @@
+import StorageInputValidator from './StorageInputValidator.js';
+
 const sessionStorageNames = {
   userWindowTitle: 'userWindowTitle',
 };
 
 class UserWindowTitleRepository {
+  constructor() {
+    this._storageInputValidator = new StorageInputValidator();
+  }
+
   async getUserWindowTitle(windowId) {
     const userWindowTitle = await browser.sessions
       .getWindowValue(windowId, sessionStorageNames.userWindowTitle);
@@ -12,6 +18,8 @@ class UserWindowTitleRepository {
   }
 
   async saveUserWindowTitle(currentWindowId, userWindowTitle) {
+    this._storageInputValidator.validate(userWindowTitle);
+
     await browser.sessions
       .setWindowValue(currentWindowId, sessionStorageNames.userWindowTitle, userWindowTitle);
   }

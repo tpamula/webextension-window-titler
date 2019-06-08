@@ -1,4 +1,5 @@
-import DefaultValues from '../model/DefaultValues.js';
+import DefaultValues from '/src/model/DefaultValues.js';
+import StorageInputValidator from './StorageInputValidator.js';
 
 const localStorageNames = {
   profileTitle: 'profileTitle',
@@ -6,6 +7,10 @@ const localStorageNames = {
 };
 
 export default class ProfileTitleRepository {
+  constructor() {
+    this._storageinputValidator = new StorageInputValidator();
+  }
+
   async getProfileTitle() {
     const profileTitleStorageObject = await browser.storage.local
       .get({ [localStorageNames.profileTitle]: DefaultValues.profileTitle });
@@ -13,6 +18,8 @@ export default class ProfileTitleRepository {
   }
 
   async saveProfileTitle(profileTitle) {
+    this._storageinputValidator.validate(profileTitle);
+
     await browser.storage.local.set({ [localStorageNames.profileTitle]: profileTitle });
   }
 
@@ -24,6 +31,8 @@ export default class ProfileTitleRepository {
   }
 
   async saveProfileTitleSeparator(profileTitleSeparator) {
+    this._storageinputValidator.validate(profileTitleSeparator);
+
     await browser.storage.local
       .set({ [localStorageNames.profileTitleSeparator]: profileTitleSeparator });
   }
