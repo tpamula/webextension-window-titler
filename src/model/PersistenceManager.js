@@ -36,7 +36,11 @@ class PersistenceManager {
   }
 
   async getUserWindowTitle(windowId) {
-    return browser.sessions.getWindowValue(windowId, this._sessionStorageNames.userWindowTitle) || '';
+    const userWindowTitle = await browser.sessions
+      .getWindowValue(windowId, this._sessionStorageNames.userWindowTitle);
+
+    const defaultValue = '';
+    return userWindowTitle || defaultValue;
   }
 
   async saveUserWindowTitle(currentWindowId, userWindowTitle) {
