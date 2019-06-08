@@ -18,8 +18,8 @@
   },
   "homepage": "https://github.com/tpamula/webextension-window-titler#readme",
   "devDependencies": {
-    "eslint": "^5.13.0",
+    "eslint": "^5.16.0",
     "eslint-config-airbnb-base": "^13.1.0",
-    "eslint-plugin-import": "^2.16.0"
+    "eslint-plugin-import": "^2.17.3"
   }
 }
