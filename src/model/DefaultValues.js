@@ -1,6 +1,6 @@
 const DefaultValues = {
-  profilePrefix: '',
-  profilePrefixSeparator: ' - ',
+  profileTitle: '',
+  profileTitleSeparator: ' - ',
 };
 
 export default DefaultValues;

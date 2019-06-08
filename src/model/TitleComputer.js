@@ -1,16 +1,17 @@
 export default class TitleComputer {
-  computeFullWindowTitle(profilePrefix, profilePrefixSeparator, userWindowTitle) {
-    const titleExists = profilePrefix || userWindowTitle;
+  computeFullWindowTitle(profileTitle, profileTitleSeparator, userWindowTitle) {
+    const titleExists = profileTitle || userWindowTitle;
     if (!titleExists) {
       return '';
     }
 
-    const separator = (profilePrefix && userWindowTitle)
-      ? profilePrefixSeparator
+    const isSeparatorRequired = profileTitle && userWindowTitle;
+    const separator = isSeparatorRequired
+      ? profileTitleSeparator
       : '';
 
-    const titleWithPrefix = `${profilePrefix}${separator}${userWindowTitle}`;
-    const titleWithOpeningClosingTags = `[${titleWithPrefix}]`;
+    const titleWithProfileTitle = `${profileTitle}${separator}${userWindowTitle}`;
+    const titleWithOpeningClosingTags = `[${titleWithProfileTitle}]`;
     const fullWindowTitle = `${titleWithOpeningClosingTags} `;
 
     return fullWindowTitle;

@@ -7,10 +7,10 @@ export default class WindowTitler {
     this._persistenceManager = new PersistenceManager();
   }
 
-  async saveProfilePrefixAndRefreshPresentation(profilePrefix, profilePrefixSeparator = null) {
-    await this._persistenceManager.saveProfilePrefix(profilePrefix);
-    if (profilePrefixSeparator !== null) {
-      await this._persistenceManager.saveProfilePrefixSeparator(profilePrefixSeparator);
+  async saveProfileTitleAndRefreshPresentation(profileTitle, profileTitleSeparator = null) {
+    await this._persistenceManager.saveProfileTitle(profileTitle);
+    if (profileTitleSeparator !== null) {
+      await this._persistenceManager.saveProfileTitleSeparator(profileTitleSeparator);
     }
     await this._refreshPresentationForAllWindows();
   }
@@ -28,11 +28,11 @@ export default class WindowTitler {
   }
 
   async _refreshPresentationForWindow(windowId) {
-    const profilePrefix = await this._persistenceManager.getProfilePrefix();
-    const profilePrefixSeparator = await this._persistenceManager.getProfilePrefixSeparator();
+    const profileTitle = await this._persistenceManager.getProfileTitle();
+    const profileTitleSeparator = await this._persistenceManager.getProfileTitleSeparator();
     const userWindowTitle = await this._persistenceManager.getUserWindowTitle(windowId);
     const fullWindowTitle = await this._titleComputer
-      .computeFullWindowTitle(profilePrefix, profilePrefixSeparator, userWindowTitle);
+      .computeFullWindowTitle(profileTitle, profileTitleSeparator, userWindowTitle);
 
     await browser.windows.update(windowId, { titlePreface: fullWindowTitle });
   }

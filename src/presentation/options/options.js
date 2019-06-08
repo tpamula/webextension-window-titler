@@ -5,29 +5,29 @@ import DefaultValues from '/src/model/DefaultValues.js';
 const windowTitler = new WindowTitler();
 const persistenceManager = new PersistenceManager();
 
-function setOptions(prefix, prefixSeparator) {
-  document.querySelector('#profile-prefix').value = prefix;
-  document.querySelector('#profile-prefix-separator').value = prefixSeparator;
+function setOptions(profileTitle, profileTitleSeparator) {
+  document.querySelector('#profile-title').value = profileTitle;
+  document.querySelector('#profile-title-separator').value = profileTitleSeparator;
 }
 
 async function restoreOptions() {
-  const prefix = await persistenceManager.getProfilePrefix();
-  const prefixSeparator = await persistenceManager.getProfilePrefixSeparator();
+  const profileTitle = await persistenceManager.getProfileTitle();
+  const profileTitleSeparator = await persistenceManager.getProfileTitleSeparator();
 
-  setOptions(prefix, prefixSeparator);
+  setOptions(profileTitle, profileTitleSeparator);
 }
 
 function saveOptions(e) {
   e.preventDefault();
 
-  const profilePrefix = document.querySelector('#profile-prefix').value;
-  const profilePrefixSeparator = document.querySelector('#profile-prefix-separator').value;
+  const profileTitle = document.querySelector('#profile-title').value;
+  const profileTitleSeparator = document.querySelector('#profile-title-separator').value;
 
-  windowTitler.saveProfilePrefixAndRefreshPresentation(profilePrefix, profilePrefixSeparator);
+  windowTitler.saveProfileTitleAndRefreshPresentation(profileTitle, profileTitleSeparator);
 }
 
 function restoreDefaults() {
-  setOptions(DefaultValues.profilePrefix, DefaultValues.profilePrefixSeparator);
+  setOptions(DefaultValues.profileTitle, DefaultValues.profileTitleSeparator);
 }
 
 restoreOptions();

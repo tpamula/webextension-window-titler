@@ -7,32 +7,32 @@ const sessionStorageNames = {
 class PersistenceManager {
   constructor() {
     this._localStorageNames = {
-      profilePrefix: 'profilePrefix',
-      profilePrefixSeparator: 'profilePrefixSeparator',
+      profileTitle: 'profileTitle',
+      profileTitleSeparator: 'profileTitleSeparator',
     };
     this._sessionStorageNames = sessionStorageNames;
   }
 
-  async getProfilePrefix() {
-    const profilePrefixStorageObject = await browser.storage.local
-      .get({ [this._localStorageNames.profilePrefix]: DefaultValues.profilePrefix });
-    return profilePrefixStorageObject[this._localStorageNames.profilePrefix];
+  async getProfileTitle() {
+    const profileTitleStorageObject = await browser.storage.local
+      .get({ [this._localStorageNames.profileTitle]: DefaultValues.profileTitle });
+    return profileTitleStorageObject[this._localStorageNames.profileTitle];
   }
 
-  async saveProfilePrefix(prefix) {
-    await browser.storage.local.set({ [this._localStorageNames.profilePrefix]: prefix });
+  async saveProfileTitle(profileTitle) {
+    await browser.storage.local.set({ [this._localStorageNames.profileTitle]: profileTitle });
   }
 
-  async getProfilePrefixSeparator() {
+  async getProfileTitleSeparator() {
     const profileObject = await browser.storage.local.get({
-      [this._localStorageNames.profilePrefixSeparator]: DefaultValues.profilePrefixSeparator,
+      [this._localStorageNames.profileTitleSeparator]: DefaultValues.profileTitleSeparator,
     });
-    return profileObject[this._localStorageNames.profilePrefixSeparator];
+    return profileObject[this._localStorageNames.profileTitleSeparator];
   }
 
-  async saveProfilePrefixSeparator(profilePrefixSeparator) {
+  async saveProfileTitleSeparator(profileTitleSeparator) {
     await browser.storage.local
-      .set({ [this._localStorageNames.profilePrefixSeparator]: profilePrefixSeparator });
+      .set({ [this._localStorageNames.profileTitleSeparator]: profileTitleSeparator });
   }
 
   async getUserWindowTitle(windowId) {
