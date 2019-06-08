@@ -1,9 +1,9 @@
-import WindowTitler from '/src/model/WindowTitler.js';
-import PersistenceManager from '/src/model/PersistenceManager.js';
+import WindowTitler from '/src/WindowTitler.js';
+import ProfileTitleRepository from '/src/persistence/ProfileTitleRepository.js';
 import DefaultValues from '/src/model/DefaultValues.js';
 
 const windowTitler = new WindowTitler();
-const persistenceManager = new PersistenceManager();
+const profileTitleRepository = new ProfileTitleRepository();
 
 function setOptions(profileTitle, profileTitleSeparator) {
   document.querySelector('#profile-title').value = profileTitle;
@@ -11,8 +11,8 @@ function setOptions(profileTitle, profileTitleSeparator) {
 }
 
 async function restoreOptions() {
-  const profileTitle = await persistenceManager.getProfileTitle();
-  const profileTitleSeparator = await persistenceManager.getProfileTitleSeparator();
+  const profileTitle = await profileTitleRepository.getProfileTitle();
+  const profileTitleSeparator = await profileTitleRepository.getProfileTitleSeparator();
 
   setOptions(profileTitle, profileTitleSeparator);
 }

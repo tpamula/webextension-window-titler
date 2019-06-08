@@ -1,4 +1,4 @@
-import WindowTitler from '/src/model/WindowTitler.js';
+import WindowTitler from '/src/WindowTitler.js';
 
 const windowTitler = new WindowTitler();
 

@@ -1,4 +1,4 @@
-export default class TitleComputer {
+export default class FullWindowTitleComputer {
   computeFullWindowTitle(profileTitle, profileTitleSeparator, userWindowTitle) {
     const titleExists = profileTitle || userWindowTitle;
     if (!titleExists) {

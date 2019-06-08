@@ -1,4 +1,4 @@
-import WindowTitler from '/src/model/WindowTitler.js';
+import WindowTitler from '/src/WindowTitler.js';
 
 const windowTitler = new WindowTitler();
 
@@ -9,8 +9,8 @@ const windowTitler = new WindowTitler();
 // There doesn't seem to be an appropriate event firing after the session is restored so resorting
 // to this one instead.
 browser.tabs.onCreated.addListener(() => {
-  windowTitler._refreshPresentationForAllWindows();
+  windowTitler.refreshPresentationForAllWindows();
 });
 
 // Needs to run if the session is restored automatically, without the session manager window.
-windowTitler._refreshPresentationForAllWindows();
+windowTitler.refreshPresentationForAllWindows();
