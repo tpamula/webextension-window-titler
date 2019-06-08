@@ -71,6 +71,10 @@ export default class FromV1_2_1MigratingUserWindowTitleRepository extends UserWi
    *
    * And maybe this functionality can be removed some time in the future when noone is using v1.2.1
    * (and below) anymore.
+   *
+   *
+   *
+   * *This is idempotent and totally transparent to the caller.*
    */
   async getUserWindowTitle(windowId) {
     await this._fromV1_2_1StorageMigrator.migrateWindowTitleToNewStorageFormat(windowId);
