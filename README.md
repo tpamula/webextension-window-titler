@@ -3,27 +3,34 @@ Window Titler
 
 ![icon](assets/icons/dark/icon-128.png)
 
-A Firefox extension that lets you add a custom per-window title. Useful if you like to have topically themed Firefox windows.
+Separate your windows topically, distinguish between profiles. This extension lets you add a per-window and per-profile titles to the Firefox windows.
 
 Usage
 -----
-Window Titler adds prefix to the browser's system window title bar. Please note the title bar is disabled by default in Firefox but can easily be enabled. The added prefix can be seen in the system's task switcher as well.
+This extension allows you to modify the Firefox window title which is visible in the operating system's window list, task switcher and in the browser's title bar. Please note, the title bar is disabled by default in Firefox but can easily be enabled.
 
-You can invoke Window Titler simply by pressing its toolbar button or by using the shortcut: **Ctrl-Alt-T**.
+* To invoke Window Titler click its toolbar button or use the keyboard shortcut: **Ctrl+Alt+T**.
 
-Useful links
-------------
+* To specify per-profile title go to the Window Titler settings page (right click on the icon and select "Manage Extension").
+
+Tips
+----
 * Enabling the title bar: https://support.mozilla.org/en-US/kb/customize-firefox-controls-buttons-and-toolbars
     * Tick the "Title bar" checkbox in the customisation screen.
-    
-If you want to keep the title bar & move the tabs to the sidebar:
-* Tree Style Tab: https://addons.mozilla.org/en-US/firefox/addon/tree-style-tab/
-* Hiding the tab bar: https://superuser.com/questions/1261660/firefox-quantum-ver-57-how-can-i-hide-the-horizontal-tab-bar-with-treesty
 
 Permissions
 -----------
 * The "Access recently closed tabs" permission is required to keep the window titles persistent across the browser restarts.
 
-Acknowledgements
-----------------
-The icons & some of the features were provided by Grzegorz Koncewicz ([GitHub profile](https://github.com/orchee)).
+Feedback & contributing
+-----------------------
+This project is fully open source. Feedback: suggestions, issues, contributions and ratings help to improve the extension and are encouraged. 
+* Source code: https://github.com/tpamula/webextension-window-titler
+* Submit a bug or a feature suggestion: https://github.com/tpamula/webextension-window-titler/issues
+* Rate: https://addons.mozilla.org/en-US/firefox/addon/window-titler
+
+Contributors
+------------
+Thanks to those who contributed to this project:
+* Framling ([Github profile](https://github.com/Framling))
+* Grzegorz Koncewicz ([GitHub profile](https://github.com/orchee))
