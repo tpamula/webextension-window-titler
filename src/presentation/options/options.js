@@ -42,6 +42,7 @@ document.querySelector('#restore-profile-defaults').addEventListener('click', re
 function setWindowTitleTagsOptions(windowTitleOpeningTag, windowTitleClosingTag) {
   document.querySelector('#window-title-opening-tag').value = windowTitleOpeningTag;
   document.querySelector('#window-title-closing-tag').value = windowTitleClosingTag;
+  updateTitleWithTagsExample();
 }
 
 async function restoreWindowTitleTagsOptions() {
@@ -69,7 +70,6 @@ function updateTitleWithTagsExample(){
 }
 
 // Tags Actions
-updateTitleWithTagsExample();
 restoreWindowTitleTagsOptions();
 document.querySelector('#save-tags').addEventListener('click', saveWindowTitleTagsOptions);
 document.querySelector('#restore-tags-defaults').addEventListener('click', restoreWindowTitleTagsDefaults);
