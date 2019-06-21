@@ -59,6 +59,7 @@ function saveWindowTitleTagsOptions() {
 
 function restoreWindowTitleTagsDefaults() {
   setWindowTitleTagsOptions(DefaultValues.windowTitleOpeningTag, DefaultValues.windowTitleClosingTag);
+  updateTitleWithTagsExample();
 }
 
 function updateTitleWithTagsExample(){
@@ -68,6 +69,7 @@ function updateTitleWithTagsExample(){
 }
 
 // Tags Actions
+updateTitleWithTagsExample();
 restoreWindowTitleTagsOptions();
 document.querySelector('#save-tags').addEventListener('click', saveWindowTitleTagsOptions);
 document.querySelector('#restore-tags-defaults').addEventListener('click', restoreWindowTitleTagsDefaults);
