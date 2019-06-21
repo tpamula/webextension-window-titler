@@ -17,6 +17,12 @@ export default class WindowTitler {
     await this.refreshPresentationForAllWindows();
   }
 
+  async saveWindowTitleTagsAndRefreshPresentation(windowTitleOpeningTag, windowTitleClosingTag) {
+    await this._windowTitleRepository.saveWindowTitleOpeningTag(windowTitleOpeningTag);
+    await this._windowTitleRepository.saveWindowTitleClosingTag(windowTitleClosingTag);
+    await this.refreshPresentationForAllWindows();
+  }
+
   async saveUserWindowTitleAndRefreshPresentation(windowId, userWindowTitle) {
     await this._windowTitleRepository.saveUserWindowTitle(windowId, userWindowTitle);
     await this._refreshPresentationForWindow(windowId);

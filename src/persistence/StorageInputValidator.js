@@ -1,3 +1,4 @@
+/* eslint-disable linebreak-style */
 const maxLength = 100;
 
 export default class StorageInputValidator {

@@ -12,6 +12,29 @@
 <body>
 <form id="options">
     <fieldset>
+        <legend>Window title opening and closing tags settings</legend>
+        <p style="text-align: justify">
+                This setting allows you to define opening and closing tags for window titles accross 
+                all browser windows. 
+        </p>
+        <p>
+            <label for="window-title-opening-tag">Window title opening tag:</label>
+            <input type="text" id="window-title-opening-tag" maxlength="100"/>
+        </p>
+        <p>
+            <label for="window-title-closing-tag">Window title closing tag:</label>
+            <input type="text" id="window-title-closing-tag" maxlength="100"/>
+        </p>
+        <p>
+            <label for="window-title-example">Window title example:</label>
+            <span>example</span>
+        </p>
+        <p>
+            <button type="button" id="restore-tags-defaults">Restore defaults</button>
+            <button type="submit" value="save-tags">Save</button>
+        </p>
+    </fieldset>
+    <fieldset>
         <legend>Profile title settings</legend>
         <p style="text-align: justify">
             This setting allows you to define a prefix that will be used for all windows in the
@@ -28,8 +51,8 @@
             <input type="text" id="profile-title-separator" maxlength="100"/>
         </p>
         <p>
-            <button type="button" id="restore-defaults">Restore defaults</button>
-            <button type="submit">Save</button>
+            <button type="button" id="restore-profiles-defaults">Restore defaults</button>
+            <button type="submit" value="save-profiles">Save</button>
         </p>
     </fieldset>
 </form>

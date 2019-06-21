@@ -4,6 +4,11 @@ const sessionStorageNames = {
   userWindowTitle: 'userWindowTitle',
 };
 
+const localStorageNames = {
+  windowTitleOpeningTag: 'windowTitleOpeningTag',
+  windowTitleClosingTag: 'windowTitleClosingTag'
+};
+
 class UserWindowTitleRepository {
   constructor() {
     this._storageInputValidator = new StorageInputValidator();
@@ -23,6 +28,31 @@ class UserWindowTitleRepository {
     await browser.sessions
       .setWindowValue(currentWindowId, sessionStorageNames.userWindowTitle, userWindowTitle);
   }
+
+  async getWindowTitleOpeningTag() {
+    const windowTitleOpeningTagStorageObject = await browser.storage.local
+      .get({ [localStorageNames.windowTitleOpeningTag]: DefaultValues.windowTitleOpeningTag });
+    return windowTitleOpeningTagStorageObject[localStorageNames.windowTitleOpeningTag];
+  }
+
+  async saveWindowTitleOpeningTag(windowTitleOpeningTag) {
+    this._storageinputValidator.validate(windowTitleOpeningTag);
+
+    await browser.storage.local.set({ [localStorageNames.windowTitleOpeningTag]: windowTitleOpeningTag });
+  }
+
+  async getWindowTitleClosingTag() {
+    const windowTitleClosingTagStorageObject = await browser.storage.local
+      .get({ [localStorageNames.windowTitleClosingTag]: DefaultValues.windowTitleClosingTag });
+    return windowTitleClosingTagStorageObject[localStorageNames.windowTitleClosingTag];
+  }
+
+  async saveWindowTitleClosingTag(windowTitleClosingTag) {
+    this._storageinputValidator.validate(windowTitleClosingTag);
+
+    await browser.storage.local.set({ [localStorageNames.windowTitleClosingTag]: windowTitleClosingTag });
+  }
+
 }
 
 // eslint-disable-next-line camelcase
