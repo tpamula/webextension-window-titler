@@ -19,19 +19,19 @@
         </p>
         <p>
             <label for="window-title-opening-tag">Window title opening tag:</label>
-            <input type="text" id="window-title-opening-tag" maxlength="100"/>
+            <input type="text" id="window-title-opening-tag" class="window-title-tag" maxlength="100"/>
         </p>
         <p>
             <label for="window-title-closing-tag">Window title closing tag:</label>
-            <input type="text" id="window-title-closing-tag" maxlength="100"/>
+            <input type="text" id="window-title-closing-tag" class="window-title-tag" maxlength="100"/>
         </p>
         <p>
             <label for="window-title-example">Window title example:</label>
-            <span>example</span>
+            <span id="window-title-tags-example"></span>
         </p>
         <p>
             <button type="button" id="restore-tags-defaults">Restore defaults</button>
-            <button type="submit" value="save-tags">Save</button>
+            <button type="button" id="save-tags">Save</button>
         </p>
     </fieldset>
     <fieldset>
@@ -51,8 +51,8 @@
             <input type="text" id="profile-title-separator" maxlength="100"/>
         </p>
         <p>
-            <button type="button" id="restore-profiles-defaults">Restore defaults</button>
-            <button type="submit" value="save-profiles">Save</button>
+            <button type="button" id="restore-profile-defaults">Restore defaults</button>
+            <button type="button" id="save-profile">Save</button>
         </p>
     </fieldset>
 </form>

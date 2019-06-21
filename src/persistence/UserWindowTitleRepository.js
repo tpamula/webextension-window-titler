@@ -1,10 +1,11 @@
+import DefaultValues from '/src/model/DefaultValues.js';
 import StorageInputValidator from './StorageInputValidator.js';
 
 const sessionStorageNames = {
-  userWindowTitle: 'userWindowTitle',
+  userWindowTitle: 'userWindowTitle'
 };
 
-const localStorageNames = {
+const localStorageTagNames = {
   windowTitleOpeningTag: 'windowTitleOpeningTag',
   windowTitleClosingTag: 'windowTitleClosingTag'
 };
@@ -30,27 +31,27 @@ class UserWindowTitleRepository {
   }
 
   async getWindowTitleOpeningTag() {
-    const windowTitleOpeningTagStorageObject = await browser.storage.local
-      .get({ [localStorageNames.windowTitleOpeningTag]: DefaultValues.windowTitleOpeningTag });
-    return windowTitleOpeningTagStorageObject[localStorageNames.windowTitleOpeningTag];
+    const localStorageTagNameObject = await browser.storage.local
+      .get({ [localStorageTagNames.windowTitleOpeningTag]: DefaultValues.windowTitleOpeningTag });
+    return localStorageTagNameObject[localStorageTagNames.windowTitleOpeningTag];
   }
 
   async saveWindowTitleOpeningTag(windowTitleOpeningTag) {
-    this._storageinputValidator.validate(windowTitleOpeningTag);
+    this._storageInputValidator.validate(windowTitleOpeningTag);
 
-    await browser.storage.local.set({ [localStorageNames.windowTitleOpeningTag]: windowTitleOpeningTag });
+    await browser.storage.local.set({ [localStorageTagNames.windowTitleOpeningTag]: windowTitleOpeningTag });
   }
 
   async getWindowTitleClosingTag() {
-    const windowTitleClosingTagStorageObject = await browser.storage.local
-      .get({ [localStorageNames.windowTitleClosingTag]: DefaultValues.windowTitleClosingTag });
-    return windowTitleClosingTagStorageObject[localStorageNames.windowTitleClosingTag];
+    const localStorageTagNameObject = await browser.storage.local
+      .get({ [localStorageTagNames.windowTitleClosingTag]: DefaultValues.windowTitleClosingTag });
+    return localStorageTagNameObject[localStorageTagNames.windowTitleClosingTag];
   }
 
   async saveWindowTitleClosingTag(windowTitleClosingTag) {
-    this._storageinputValidator.validate(windowTitleClosingTag);
+    this._storageInputValidator.validate(windowTitleClosingTag);
 
-    await browser.storage.local.set({ [localStorageNames.windowTitleClosingTag]: windowTitleClosingTag });
+    await browser.storage.local.set({ [localStorageTagNames.windowTitleClosingTag]: windowTitleClosingTag });
   }
 
 }

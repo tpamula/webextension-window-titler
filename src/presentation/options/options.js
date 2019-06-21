@@ -1,11 +1,11 @@
 import WindowTitler from '/src/WindowTitler.js';
 import ProfileTitleRepository from '/src/persistence/ProfileTitleRepository.js';
-import DefaultValues from '/src/model/DefaultValues.js';
 import UserWindowTitleRepository from '/src/persistence/UserWindowTitleRepository.js';
+import DefaultValues from '/src/model/DefaultValues.js';
 
 const windowTitler = new WindowTitler();
 const profileTitleRepository = new ProfileTitleRepository();
-const UserWindowTitleRepository = new UserWindowTitleRepository();
+const userWindowTitleRepository = new UserWindowTitleRepository();
 
 
 // Profile Functions
@@ -21,7 +21,7 @@ async function restoreProfileOptions() {
   setProfileOptions(profileTitle, profileTitleSeparator);
 }
 
-function saveProfileOptions(e) {
+function saveProfileOptions() {
   const profileTitle = document.querySelector('#profile-title').value;
   const profileTitleSeparator = document.querySelector('#profile-title-separator').value;
 
@@ -45,24 +45,31 @@ function setWindowTitleTagsOptions(windowTitleOpeningTag, windowTitleClosingTag)
 }
 
 async function restoreWindowTitleTagsOptions() {
-  const windowTitleOpeningTag = await UserWindowTitleRepository.getWindowTitleOpeningTag();
-  const windowTitleClosingTag = await UserWindowTitleRepository.getWindowTitleClosingTag();
+  const windowTitleOpeningTag = await userWindowTitleRepository.getWindowTitleOpeningTag();
+  const windowTitleClosingTag = await userWindowTitleRepository.getWindowTitleClosingTag();
 
   setWindowTitleTagsOptions(windowTitleOpeningTag, windowTitleClosingTag);
 }
 
-function saveWindowTitleTagsOptions(e) {
+function saveWindowTitleTagsOptions() {
   const windowTitleOpeningTag = document.querySelector('#window-title-opening-tag').value;
   const windowTitleClosingTag = document.querySelector('#window-title-closing-tag').value;
-
   windowTitler.saveWindowTitleTagsAndRefreshPresentation(windowTitleOpeningTag, windowTitleClosingTag);
 }
 
 function restoreWindowTitleTagsDefaults() {
-  setProfileOptions(DefaultValues.profileTitle, DefaultValues.profileTitleSeparator);
+  setWindowTitleTagsOptions(DefaultValues.windowTitleOpeningTag, DefaultValues.windowTitleClosingTag);
+}
+
+function updateTitleWithTagsExample(){
+  const windowTitleOpeningTag = document.querySelector('#window-title-opening-tag').value;
+  const windowTitleClosingTag = document.querySelector('#window-title-closing-tag').value;
+  document.querySelector('#window-title-tags-example').innerHTML = `${windowTitleOpeningTag}User title${windowTitleClosingTag}Standard web page title`;
 }
 
 // Tags Actions
 restoreWindowTitleTagsOptions();
 document.querySelector('#save-tags').addEventListener('click', saveWindowTitleTagsOptions);
 document.querySelector('#restore-tags-defaults').addEventListener('click', restoreWindowTitleTagsDefaults);
+document.querySelector('#window-title-opening-tag').addEventListener('change', updateTitleWithTagsExample);
+document.querySelector('#window-title-closing-tag').addEventListener('change', updateTitleWithTagsExample);
