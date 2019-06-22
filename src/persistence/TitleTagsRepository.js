@@ -6,7 +6,7 @@ const localStorageTagNames = {
     closingTag: 'closingTag'
 };
 
-class WindowTitleTagsRepository {
+export default class TitleTagsRepository {
     constructor() {
       this._storageInputValidator = new StorageInputValidator();
     }
@@ -34,5 +34,4 @@ class WindowTitleTagsRepository {
   
       await browser.storage.local.set({ [localStorageTagNames.closingTag]: closingTag });
     }
-  
-  }
+}

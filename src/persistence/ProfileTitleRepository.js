@@ -3,7 +3,7 @@ import StorageInputValidator from './StorageInputValidator.js';
 
 const localStorageProfileNames = {
   profileTitle: 'profileTitle',
-  profileTitleSeparator: 'profileTitleSeparator',
+  profileTitleSeparator: 'profileTitleSeparator'
 };
 
 export default class ProfileTitleRepository {

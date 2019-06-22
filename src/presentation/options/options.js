@@ -1,11 +1,11 @@
 import WindowTitler from '/src/WindowTitler.js';
 import ProfileTitleRepository from '/src/persistence/ProfileTitleRepository.js';
-import WindowTitleTagsRepository from '/src/persistence/WindowTitleTagsRepository.js';
+import TitleTagsRepository from '/src/persistence/TitleTagsRepository.js';
 import DefaultValues from '/src/model/DefaultValues.js';
 
 const windowTitler = new WindowTitler();
 const profileTitleRepository = new ProfileTitleRepository();
-const windowTitleTags = new WindowTitleTagsRepository();
+const titleTags = new TitleTagsRepository();
 
 
 // Profile Functions
@@ -39,30 +39,30 @@ document.querySelector('#restore-profile-defaults').addEventListener('click', re
 
 
 // Tags Functions
-function setWindowTitleTagOptions(openingTag, closingTag) {
+function setTitleTagOptions(openingTag, closingTag) {
   document.querySelector('#opening-tag').value = openingTag;
   document.querySelector('#closing-tag').value = closingTag;
 }
 
-async function restoreWindowTitleTagOptions() {
-  const openingTag = await windowTitleTags.getOpeningTag();
-  const closingTag = await windowTitleTags.getClosingTag();
+async function restoreTitleTagOptions() {
+  const openingTag = await titleTags.getOpeningTag();
+  const closingTag = await titleTags.getClosingTag();
 
-  setWindowTitleTagOptions(openingTag, closingTag);
+  setTitleTagOptions(openingTag, closingTag);
 }
 
-function saveWindowTitleTagOptions() {
+function saveTitleTagOptions() {
   const openingTag = document.querySelector('#opening-tag').value;
   const closingTag = document.querySelector('#closing-tag').value;
-  windowTitler.saveWindowTitleTagsAndRefreshPresentation(openingTag, closingTag);
+  windowTitler.saveTitleTagsAndRefreshPresentation(openingTag, closingTag);
 }
 
-function restoreWindowTitleTagDefaults() {
-  setWindowTitleTagOptions(DefaultValues.openingTag, DefaultValues.closingTag);
+function restoreTitleTagDefaults() {
+  setTitleTagOptions(DefaultValues.openingTag, DefaultValues.closingTag);
 }
 
 
 // Tags Actions
-restoreWindowTitleTagOptions();
-document.querySelector('#save-tags').addEventListener('click', saveWindowTitleTagOptions);
-document.querySelector('#restore-tags-defaults').addEventListener('click', restoreWindowTitleTagDefaults);
+restoreTitleTagOptions();
+document.querySelector('#save-tags').addEventListener('click', saveTitleTagOptions);
+document.querySelector('#restore-tags-defaults').addEventListener('click', restoreTitleTagDefaults);
