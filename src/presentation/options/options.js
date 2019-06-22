@@ -1,11 +1,11 @@
 import WindowTitler from '/src/WindowTitler.js';
 import ProfileTitleRepository from '/src/persistence/ProfileTitleRepository.js';
-import UserWindowTitleRepository from '/src/persistence/UserWindowTitleRepository.js';
+import WindowTitleTagsRepository from '/src/persistence/WindowTitleTagsRepository.js';
 import DefaultValues from '/src/model/DefaultValues.js';
 
 const windowTitler = new WindowTitler();
 const profileTitleRepository = new ProfileTitleRepository();
-const userWindowTitleRepository = new UserWindowTitleRepository();
+const windowTitleTags = new WindowTitleTagsRepository();
 
 
 // Profile Functions
@@ -39,39 +39,30 @@ document.querySelector('#restore-profile-defaults').addEventListener('click', re
 
 
 // Tags Functions
-function setWindowTitleTagsOptions(windowTitleOpeningTag, windowTitleClosingTag) {
-  document.querySelector('#window-title-opening-tag').value = windowTitleOpeningTag;
-  document.querySelector('#window-title-closing-tag').value = windowTitleClosingTag;
-  updateTitleWithTagsExample();
+function setWindowTitleTagOptions(openingTag, closingTag) {
+  document.querySelector('#opening-tag').value = openingTag;
+  document.querySelector('#closing-tag').value = closingTag;
 }
 
-async function restoreWindowTitleTagsOptions() {
-  const windowTitleOpeningTag = await userWindowTitleRepository.getWindowTitleOpeningTag();
-  const windowTitleClosingTag = await userWindowTitleRepository.getWindowTitleClosingTag();
+async function restoreWindowTitleTagOptions() {
+  const openingTag = await windowTitleTags.getOpeningTag();
+  const closingTag = await windowTitleTags.getClosingTag();
 
-  setWindowTitleTagsOptions(windowTitleOpeningTag, windowTitleClosingTag);
+  setWindowTitleTagOptions(openingTag, closingTag);
 }
 
-function saveWindowTitleTagsOptions() {
-  const windowTitleOpeningTag = document.querySelector('#window-title-opening-tag').value;
-  const windowTitleClosingTag = document.querySelector('#window-title-closing-tag').value;
-  windowTitler.saveWindowTitleTagsAndRefreshPresentation(windowTitleOpeningTag, windowTitleClosingTag);
+function saveWindowTitleTagOptions() {
+  const openingTag = document.querySelector('#opening-tag').value;
+  const closingTag = document.querySelector('#closing-tag').value;
+  windowTitler.saveWindowTitleTagsAndRefreshPresentation(openingTag, closingTag);
 }
 
-function restoreWindowTitleTagsDefaults() {
-  setWindowTitleTagsOptions(DefaultValues.windowTitleOpeningTag, DefaultValues.windowTitleClosingTag);
-  updateTitleWithTagsExample();
+function restoreWindowTitleTagDefaults() {
+  setWindowTitleTagOptions(DefaultValues.openingTag, DefaultValues.closingTag);
 }
 
-function updateTitleWithTagsExample(){
-  const windowTitleOpeningTag = document.querySelector('#window-title-opening-tag').value;
-  const windowTitleClosingTag = document.querySelector('#window-title-closing-tag').value;
-  document.querySelector('#window-title-tags-example').innerHTML = `${windowTitleOpeningTag}User title${windowTitleClosingTag}Standard web page title`;
-}
 
 // Tags Actions
-restoreWindowTitleTagsOptions();
-document.querySelector('#save-tags').addEventListener('click', saveWindowTitleTagsOptions);
-document.querySelector('#restore-tags-defaults').addEventListener('click', restoreWindowTitleTagsDefaults);
-document.querySelector('#window-title-opening-tag').addEventListener('change', updateTitleWithTagsExample);
-document.querySelector('#window-title-closing-tag').addEventListener('change', updateTitleWithTagsExample);
+restoreWindowTitleTagOptions();
+document.querySelector('#save-tags').addEventListener('click', saveWindowTitleTagOptions);
+document.querySelector('#restore-tags-defaults').addEventListener('click', restoreWindowTitleTagDefaults);

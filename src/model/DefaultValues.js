@@ -1,8 +1,8 @@
 const DefaultValues = {
   profileTitle: '',
   profileTitleSeparator: ' - ',
-  windowTitleOpeningTag: '[',
-  windowTitleClosingTag: ']'
+  openingTag: '[',
+  closingTag: ']'
 };
 
 export default DefaultValues;

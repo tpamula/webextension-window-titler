@@ -1,13 +1,7 @@
-import DefaultValues from '/src/model/DefaultValues.js';
 import StorageInputValidator from './StorageInputValidator.js';
 
 const sessionStorageNames = {
   userWindowTitle: 'userWindowTitle'
-};
-
-const localStorageTagNames = {
-  windowTitleOpeningTag: 'windowTitleOpeningTag',
-  windowTitleClosingTag: 'windowTitleClosingTag'
 };
 
 class UserWindowTitleRepository {
@@ -29,31 +23,6 @@ class UserWindowTitleRepository {
     await browser.sessions
       .setWindowValue(currentWindowId, sessionStorageNames.userWindowTitle, userWindowTitle);
   }
-
-  async getWindowTitleOpeningTag() {
-    const localStorageTagNameObject = await browser.storage.local
-      .get({ [localStorageTagNames.windowTitleOpeningTag]: DefaultValues.windowTitleOpeningTag });
-    return localStorageTagNameObject[localStorageTagNames.windowTitleOpeningTag];
-  }
-
-  async saveWindowTitleOpeningTag(windowTitleOpeningTag) {
-    this._storageInputValidator.validate(windowTitleOpeningTag);
-
-    await browser.storage.local.set({ [localStorageTagNames.windowTitleOpeningTag]: windowTitleOpeningTag });
-  }
-
-  async getWindowTitleClosingTag() {
-    const localStorageTagNameObject = await browser.storage.local
-      .get({ [localStorageTagNames.windowTitleClosingTag]: DefaultValues.windowTitleClosingTag });
-    return localStorageTagNameObject[localStorageTagNames.windowTitleClosingTag];
-  }
-
-  async saveWindowTitleClosingTag(windowTitleClosingTag) {
-    this._storageInputValidator.validate(windowTitleClosingTag);
-
-    await browser.storage.local.set({ [localStorageTagNames.windowTitleClosingTag]: windowTitleClosingTag });
-  }
-
 }
 
 // eslint-disable-next-line camelcase

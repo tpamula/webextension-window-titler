@@ -17,9 +17,9 @@ export default class WindowTitler {
     await this.refreshPresentationForAllWindows();
   }
   
-  async saveWindowTitleTagsAndRefreshPresentation(windowTitleOpeningTag, windowTitleClosingTag) {
-    await this._windowTitleRepository.saveWindowTitleOpeningTag(windowTitleOpeningTag);
-    await this._windowTitleRepository.saveWindowTitleClosingTag(windowTitleClosingTag);
+  async saveWindowTitleTagsAndRefreshPresentation(openingTag, closingTag) {
+    await this._windowTitleRepository.saveOpeningTag(openingTag);
+    await this._windowTitleRepository.saveClosingTag(closingTag);
     await this.refreshPresentationForAllWindows();
   }
 
@@ -38,11 +38,11 @@ export default class WindowTitler {
   async _refreshPresentationForWindow(windowId) {
     const profileTitle = await this._profileTitleRepository.getProfileTitle();
     const profileTitleSeparator = await this._profileTitleRepository.getProfileTitleSeparator();
-    const windowTitleOpeningTag = await this._windowTitleRepository.getWindowTitleOpeningTag();
-    const windowTitleClosingTag = await this._windowTitleRepository.getWindowTitleClosingTag();
+    const openingTag = await this._windowTitleRepository.getOpeningTag();
+    const closingTag = await this._windowTitleRepository.getClosingTag();
     const userWindowTitle = await this._windowTitleRepository.getUserWindowTitle(windowId);
     const fullWindowTitle = await this._titleComputer
-      .computeFullWindowTitle(profileTitle, profileTitleSeparator, userWindowTitle, windowTitleOpeningTag, windowTitleClosingTag);
+      .computeFullWindowTitle(profileTitle, profileTitleSeparator, userWindowTitle, openingTag, closingTag);
 
     await browser.windows.update(windowId, { titlePreface: fullWindowTitle });
   }

@@ -1,5 +1,5 @@
 export default class FullWindowTitleComputer {
-  computeFullWindowTitle(profileTitle, profileTitleSeparator, userWindowTitle, windowTitleOpeningTag, windowTitleClosingTag) {
+  computeFullWindowTitle(profileTitle, profileTitleSeparator, userWindowTitle, openingTag, closingTag) {
     const titleExists = profileTitle || userWindowTitle;
     if (!titleExists) {
       return '';
@@ -11,7 +11,7 @@ export default class FullWindowTitleComputer {
       : '';
 
     const titleWithProfileTitle = `${profileTitle}${separator}${userWindowTitle}`;
-    const titleWithOpeningClosingTags = `${(windowTitleOpeningTag == null) ? '' : windowTitleOpeningTag}${titleWithProfileTitle}${(windowTitleClosingTag == null) ? '' : windowTitleClosingTag}`;
+    const titleWithOpeningClosingTags = `${openingTag}${titleWithProfileTitle}${closingTag}`;
     const fullWindowTitle = `${titleWithOpeningClosingTags} `;
 
     return fullWindowTitle;
