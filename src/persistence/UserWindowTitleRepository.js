@@ -1,7 +1,7 @@
 import StorageInputValidator from './StorageInputValidator.js';
 
 const sessionStorageNames = {
-  userWindowTitle: 'userWindowTitle'
+  userWindowTitle: 'userWindowTitle',
 };
 
 class UserWindowTitleRepository {
