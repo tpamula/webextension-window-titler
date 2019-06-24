@@ -37,6 +37,11 @@ export default class WindowTitler {
     });
   }
 
+  async getUserWindowTitle(windowId) {
+    const userWindowTitle = await this._windowTitleRepository.getUserWindowTitle(windowId);
+    return userWindowTitle;
+  }
+
   async _refreshPresentationForWindow(windowId) {
     const profileTitle = await this._profileTitleRepository.getProfileTitle();
     const profileTitleSeparator = await this._profileTitleRepository.getProfileTitleSeparator();
