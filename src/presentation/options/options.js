@@ -1,35 +1,67 @@
 import WindowTitler from '/src/WindowTitler.js';
 import ProfileTitleRepository from '/src/persistence/ProfileTitleRepository.js';
+import FullWindowTitleTagRepository from '/src/persistence/FullWindowTitleTagRepository.js';
 import DefaultValues from '/src/model/DefaultValues.js';
 
 const windowTitler = new WindowTitler();
 const profileTitleRepository = new ProfileTitleRepository();
+const titleTags = new FullWindowTitleTagRepository();
 
-function setOptions(profileTitle, profileTitleSeparator) {
+
+// Profile Functions
+function setProfileOptions(profileTitle, profileTitleSeparator) {
   document.querySelector('#profile-title').value = profileTitle;
   document.querySelector('#profile-title-separator').value = profileTitleSeparator;
 }
 
-async function restoreOptions() {
+async function restoreProfileOptions() {
   const profileTitle = await profileTitleRepository.getProfileTitle();
   const profileTitleSeparator = await profileTitleRepository.getProfileTitleSeparator();
 
-  setOptions(profileTitle, profileTitleSeparator);
+  setProfileOptions(profileTitle, profileTitleSeparator);
 }
 
-function saveOptions(e) {
-  e.preventDefault();
-
+function saveProfileOptions() {
   const profileTitle = document.querySelector('#profile-title').value;
   const profileTitleSeparator = document.querySelector('#profile-title-separator').value;
 
   windowTitler.saveProfileTitleAndRefreshPresentation(profileTitle, profileTitleSeparator);
 }
 
-function restoreDefaults() {
-  setOptions(DefaultValues.profileTitle, DefaultValues.profileTitleSeparator);
+function restoreProfileDefaults() {
+  setProfileOptions(DefaultValues.profileTitle, DefaultValues.profileTitleSeparator);
 }
 
-restoreOptions();
-document.querySelector('form').addEventListener('submit', saveOptions);
-document.querySelector('#restore-defaults').addEventListener('click', restoreDefaults);
+// Tag Functions
+function setFullWindowTitleTagOptions(openingTag, closingTag) {
+  document.querySelector('#opening-tag').value = openingTag;
+  document.querySelector('#closing-tag').value = closingTag;
+}
+
+async function restoreFullWindowTitleTagOptions() {
+  const openingTag = await titleTags.getOpeningTag();
+  const closingTag = await titleTags.getClosingTag();
+
+  setFullWindowTitleTagOptions(openingTag, closingTag);
+}
+
+function saveFullWindowTitleTagOptions() {
+  const openingTag = document.querySelector('#opening-tag').value;
+  const closingTag = document.querySelector('#closing-tag').value;
+  windowTitler.saveFullWindowTitleTagsAndRefreshPresentation(openingTag, closingTag);
+}
+
+function restoreFullWindowTitleTagDefaults() {
+  setFullWindowTitleTagOptions(DefaultValues.fullWindowTitleOpeningTag,
+    DefaultValues.fullWindowTitleClosingTag);
+}
+
+// Profile Actions
+restoreProfileOptions();
+document.querySelector('#save-profile').addEventListener('click', saveProfileOptions);
+document.querySelector('#restore-profile-defaults').addEventListener('click', restoreProfileDefaults);
+
+// Tag Actions
+restoreFullWindowTitleTagOptions();
+document.querySelector('#save-tags').addEventListener('click', saveFullWindowTitleTagOptions);
+document.querySelector('#restore-tag-defaults').addEventListener('click', restoreFullWindowTitleTagDefaults);

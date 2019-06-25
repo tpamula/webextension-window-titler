@@ -6,11 +6,27 @@
     <style type="text/css">
         p { text-align: center; }
         input { width: 100%; }
+        fieldset { margin-bottom: 1em;}
     </style>
 </head>
 
 <body>
 <form id="options">
+    <fieldset>
+        <legend>Window title tag settings</legend>
+        <p>
+            <label for="opening-tag">Opening tag:</label>
+            <input type="text" id="opening-tag" maxlength="100"/>
+        </p>
+        <p>
+            <label for="closing-tag">Closing tag:</label>
+            <input type="text" id="closing-tag" maxlength="100"/>
+        </p>
+        <p>
+            <button type="button" id="restore-tag-defaults">Restore defaults</button>
+            <button type="button" id="save-tags">Save</button>
+        </p>
+    </fieldset>
     <fieldset>
         <legend>Profile title settings</legend>
         <p style="text-align: justify">
@@ -28,8 +44,8 @@
             <input type="text" id="profile-title-separator" maxlength="100"/>
         </p>
         <p>
-            <button type="button" id="restore-defaults">Restore defaults</button>
-            <button type="submit">Save</button>
+            <button type="button" id="restore-profile-defaults">Restore defaults</button>
+            <button type="button" id="save-profile">Save</button>
         </p>
     </fieldset>
 </form>
