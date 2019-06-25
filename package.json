@@ -4,6 +4,10 @@
   "description": "![icon](icons/dark/icon-128.png)",
   "main": "src/presentation/background/background.js",
   "scripts": {
+    "start": "web-ext run",
+    "build": "web-ext build",
+    "lint": "eslint \"src/**/*.js\"",
+    "lint:fix": "eslint --fix \"src/**/*.js\"",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -20,6 +24,7 @@
   "devDependencies": {
     "eslint": "^5.16.0",
     "eslint-config-airbnb-base": "^13.1.0",
-    "eslint-plugin-import": "^2.17.3"
+    "eslint-plugin-import": "^2.17.3",
+    "web-ext": "^3.0.0"
   }
 }
