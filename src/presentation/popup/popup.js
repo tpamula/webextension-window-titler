@@ -28,6 +28,8 @@ document.getElementById('window-titler-form').addEventListener('submit', async (
 
 window.onload = async () => {
   const currentWindowTitle = await getCurrentWindowTitle();
+  const userWindowTitleInput = document.getElementById('user-window-title-input');
 
-  document.getElementById('user-window-title-input').value = currentWindowTitle;
+  userWindowTitleInput.value = currentWindowTitle;
+  userWindowTitleInput.select();
 };
