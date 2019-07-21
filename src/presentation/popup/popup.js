@@ -17,10 +17,10 @@ async function getCurrentWindowTitle() {
   return currentWindowTitle;
 }
 
-document.getElementById('window-titler-form').addEventListener('submit', async (e) => {
+document.querySelector('#window-titler-form').addEventListener('submit', async (e) => {
   e.preventDefault();
 
-  const userWindowTitle = document.getElementById('user-window-title-input').value;
+  const userWindowTitle = document.querySelector('#user-window-title-input').value;
   await setUserWindowTitle(userWindowTitle);
 
   window.close();
@@ -28,8 +28,10 @@ document.getElementById('window-titler-form').addEventListener('submit', async (
 
 window.onload = async () => {
   const currentWindowTitle = await getCurrentWindowTitle();
-  const userWindowTitleInput = document.getElementById('user-window-title-input');
+  const userWindowTitleInput = document.querySelector('#user-window-title-input');
 
   userWindowTitleInput.value = currentWindowTitle;
   userWindowTitleInput.select();
 };
+
+document.querySelector('#btn-settings').onclick = () => browser.runtime.openOptionsPage();
