@@ -3,15 +3,15 @@ Window Titler
 
 ![icon](assets/icons/dark/icon-128.png)
 
-Separate your windows topically, distinguish between profiles. This extension lets you add a per-window and per-profile titles to the Firefox windows.
+Label your windows and profiles using custom window titles.
 
 Usage
 -----
-This extension allows you to modify the Firefox window title which is visible in the operating system's window list, task switcher and in the browser's title bar. Please note, the title bar is disabled by default in Firefox but can easily be enabled.
+This extension allows you to modify the Firefox window title which is visible in the operating system's window list, task switcher and in the browser's title bar. The title bar is disabled by default in Firefox but can be enabled easily.
 
-* To invoke Window Titler click its toolbar button or use the keyboard shortcut: **Ctrl+Alt+T**.
+* To invoke Window Titler click its toolbar button or use the keyboard shortcut (default: **Ctrl+Alt+T**).
 
-* To specify per-profile title go to the Window Titler settings page (right click on the icon and select "Manage Extension").
+* To specify per-profile title go to the extension settings page.
 
 Tips
 ----
@@ -32,5 +32,5 @@ This project is fully open source. Feedback: suggestions, issues, contributions 
 Contributors
 ------------
 Thanks to those who contributed to this project:
-* Framling ([Github profile](https://github.com/Framling))
-* Grzegorz Koncewicz ([GitHub profile](https://github.com/orchee))
+* [Framling](https://github.com/Framling)
+* [orchee](https://github.com/orchee)
