@@ -1,52 +1,55 @@
 <!DOCTYPE html>
 
-<html>
+<html lang="en">
 <head>
     <meta charset="utf-8"/>
     <style type="text/css">
-        p { text-align: center; }
+        div { text-align: center; }
         input { width: 100%; }
         fieldset { margin-bottom: 1em;}
     </style>
 </head>
 
-<body>
+<body style="margin-top: 1rem;">
 <form id="options">
     <fieldset>
-        <legend>Window title tag settings</legend>
-        <p>
-            <label for="opening-tag">Opening tag:</label>
-            <input type="text" id="opening-tag" maxlength="100"/>
-        </p>
-        <p>
-            <label for="closing-tag">Closing tag:</label>
-            <input type="text" id="closing-tag" maxlength="100"/>
-        </p>
-        <p>
-            <button type="button" id="restore-tag-defaults">Restore defaults</button>
-            <button type="button" id="save-tags">Save</button>
-        </p>
+        <legend>Keyboard shortcut</legend>
+        <div style="text-align: justify">
+            Since Firefox 66 keyboard shortcuts can be modified in the Manage Extension Shortcuts settings page. <a href="https://support.mozilla.org/en-US/kb/manage-extension-shortcuts-firefox">How to access it.</a>
+        </div>
     </fieldset>
     <fieldset>
-        <legend>Profile title settings</legend>
-        <p style="text-align: justify">
-            This setting allows you to define a prefix that will be used for all windows in the
-            current Firefox profile. You can distinguish your profiles with a custom prefix or
-            - if you don't use multiple profiles - simply set a global prefix for all Firefox
-            windows.
-        </p>
-        <p>
+        <legend>Window title tags</legend>
+        <div>
+            <label for="opening-tag">Opening tag:</label>
+            <input type="text" id="opening-tag" maxlength="100"/>
+        </div>
+        <div>
+            <label for="closing-tag">Closing tag:</label>
+            <input type="text" id="closing-tag" maxlength="100"/>
+        </div>
+        <div>
+            <button type="button" id="restore-tag-defaults">Restore defaults</button>
+            <button type="button" id="save-tags">Save</button>
+        </div>
+    </fieldset>
+    <fieldset>
+        <legend>Profile title</legend>
+        <div style="text-align: justify">
+            Define a prefix that will be used for all windows in the current Firefox profile.
+        </div>
+        <div>
             <label for="profile-title">Profile title:</label>
             <input type="text" id="profile-title" maxlength="100"/>
-        </p>
-        <p>
+        </div>
+        <div>
             <label for="profile-title-separator">Profile title separator:</label>
             <input type="text" id="profile-title-separator" maxlength="100"/>
-        </p>
-        <p>
+        </div>
+        <div>
             <button type="button" id="restore-profile-defaults">Restore defaults</button>
             <button type="button" id="save-profile">Save</button>
-        </p>
+        </div>
     </fieldset>
 </form>
 
