@@ -1,8 +1,8 @@
 {
   "manifest_version": 2,
   "name": "Window Titler",
-  "version": "2.0",
-  "description": "Separate your windows topically, distinguish between profiles. This extension lets you add a per-window and per-profile title to the Firefox windows.",
+  "version": "3.0",
+  "description": "Label your windows and profiles using custom window titles.",
   "applications": {
     "gecko": {
       "id": "{35dd5f9a-ca89-4643-b107-f07d09cc94b5}"
