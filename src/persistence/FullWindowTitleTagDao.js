@@ -6,7 +6,7 @@ const localStorageFullWindowTitleTagNames = {
   closingTag: 'fullWindowTitleClosingTag',
 };
 
-export default class FullWindowTitleTagRepository {
+export default class FullWindowTitleTagDao {
   constructor() {
     this._storageInputValidator = new StorageInputValidator();
   }

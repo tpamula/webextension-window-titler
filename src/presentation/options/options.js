@@ -1,11 +1,11 @@
 import WindowTitler from '/src/WindowTitler.js';
-import ProfileTitleRepository from '/src/persistence/ProfileTitleRepository.js';
-import FullWindowTitleTagRepository from '/src/persistence/FullWindowTitleTagRepository.js';
+import ProfileTitleDao from '/src/persistence/ProfileTitleDao.js';
+import FullWindowTitleTagDao from '/src/persistence/FullWindowTitleTagDao.js';
 import DefaultValues from '/src/model/DefaultValues.js';
 
 const windowTitler = new WindowTitler();
-const profileTitleRepository = new ProfileTitleRepository();
-const titleTags = new FullWindowTitleTagRepository();
+const profileTitleDao = new ProfileTitleDao();
+const titleTags = new FullWindowTitleTagDao();
 
 
 // Profile Functions
@@ -15,8 +15,8 @@ function setProfileOptions(profileTitle, profileTitleSeparator) {
 }
 
 async function restoreProfileOptions() {
-  const profileTitle = await profileTitleRepository.getProfileTitle();
-  const profileTitleSeparator = await profileTitleRepository.getProfileTitleSeparator();
+  const profileTitle = await profileTitleDao.getProfileTitle();
+  const profileTitleSeparator = await profileTitleDao.getProfileTitleSeparator();
 
   setProfileOptions(profileTitle, profileTitleSeparator);
 }

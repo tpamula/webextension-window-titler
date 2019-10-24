@@ -1,3 +1,4 @@
+
 import DefaultValues from '/src/model/DefaultValues.js';
 import StorageInputValidator from './StorageInputValidator.js';
 
@@ -6,7 +7,7 @@ const localStorageProfileNames = {
   profileTitleSeparator: 'profileTitleSeparator',
 };
 
-export default class ProfileTitleRepository {
+export default class ProfileTitleDao {
   constructor() {
     this._storageinputValidator = new StorageInputValidator();
   }

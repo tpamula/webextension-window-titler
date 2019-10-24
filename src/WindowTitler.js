@@ -1,32 +1,32 @@
-import WindowTitleRepository from '/src/persistence/UserWindowTitleRepository.js';
-import ProfileTitleRepository from '/src/persistence/ProfileTitleRepository.js';
+import WindowTitleDao from '/src/persistence/UserWindowTitleDao.js';
+import ProfileTitleDao from '/src/persistence/ProfileTitleDao.js';
 import FullWindowTitleComputer from '/src/model/FullWindowTitleComputer.js';
-import FullWindowTitleTagRepository from '/src/persistence/FullWindowTitleTagRepository.js';
+import FullWindowTitleTagDao from '/src/persistence/FullWindowTitleTagDao.js';
 
 export default class WindowTitler {
   constructor() {
     this._titleComputer = new FullWindowTitleComputer();
-    this._windowTitleRepository = new WindowTitleRepository();
-    this._profileTitleRepository = new ProfileTitleRepository();
-    this._fullWindowTitleTagRepository = new FullWindowTitleTagRepository();
+    this._windowTitleDao = new WindowTitleDao();
+    this._profileTitleDao = new ProfileTitleDao();
+    this._fullWindowTitleTagDao = new FullWindowTitleTagDao();
   }
 
   async saveProfileTitleAndRefreshPresentation(profileTitle, profileTitleSeparator = null) {
-    await this._profileTitleRepository.saveProfileTitle(profileTitle);
+    await this._profileTitleDao.saveProfileTitle(profileTitle);
     if (profileTitleSeparator !== null) {
-      await this._profileTitleRepository.saveProfileTitleSeparator(profileTitleSeparator);
+      await this._profileTitleDao.saveProfileTitleSeparator(profileTitleSeparator);
     }
     await this.refreshPresentationForAllWindows();
   }
 
   async saveFullWindowTitleTagsAndRefreshPresentation(openingTag, closingTag) {
-    await this._fullWindowTitleTagRepository.saveOpeningTag(openingTag);
-    await this._fullWindowTitleTagRepository.saveClosingTag(closingTag);
+    await this._fullWindowTitleTagDao.saveOpeningTag(openingTag);
+    await this._fullWindowTitleTagDao.saveClosingTag(closingTag);
     await this.refreshPresentationForAllWindows();
   }
 
   async saveUserWindowTitleAndRefreshPresentation(windowId, userWindowTitle) {
-    await this._windowTitleRepository.saveUserWindowTitle(windowId, userWindowTitle);
+    await this._windowTitleDao.saveUserWindowTitle(windowId, userWindowTitle);
     await this._refreshPresentationForWindow(windowId);
   }
 
@@ -38,11 +38,11 @@ export default class WindowTitler {
   }
 
   async _refreshPresentationForWindow(windowId) {
-    const profileTitle = await this._profileTitleRepository.getProfileTitle();
-    const profileTitleSeparator = await this._profileTitleRepository.getProfileTitleSeparator();
-    const fullWindowTitleOpeningTag = await this._fullWindowTitleTagRepository.getOpeningTag();
-    const fullWindowTitleClosingTag = await this._fullWindowTitleTagRepository.getClosingTag();
-    const userWindowTitle = await this._windowTitleRepository.getUserWindowTitle(windowId);
+    const profileTitle = await this._profileTitleDao.getProfileTitle();
+    const profileTitleSeparator = await this._profileTitleDao.getProfileTitleSeparator();
+    const fullWindowTitleOpeningTag = await this._fullWindowTitleTagDao.getOpeningTag();
+    const fullWindowTitleClosingTag = await this._fullWindowTitleTagDao.getClosingTag();
+    const userWindowTitle = await this._windowTitleDao.getUserWindowTitle(windowId);
     const fullWindowTitle = await this._titleComputer.computeFullWindowTitle(profileTitle,
       profileTitleSeparator, userWindowTitle, fullWindowTitleOpeningTag, fullWindowTitleClosingTag);
 

@@ -4,7 +4,7 @@ const sessionStorageNames = {
   userWindowTitle: 'userWindowTitle',
 };
 
-class UserWindowTitleRepository {
+class UserWindowTitleDao {
   constructor() {
     this._storageInputValidator = new StorageInputValidator();
   }
@@ -54,7 +54,7 @@ class FromV1_2_1SessionStorageMigrator {
 }
 
 // eslint-disable-next-line camelcase,max-len
-export default class FromV1_2_1MigratingUserWindowTitleRepository extends UserWindowTitleRepository {
+export default class FromV1_2_1MigratingUserWindowTitleDao extends UserWindowTitleDao {
   constructor() {
     super();
 

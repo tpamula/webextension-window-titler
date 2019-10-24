@@ -1,8 +1,8 @@
 import WindowTitler from '/src/WindowTitler.js';
-import WindowTitleRepository from '/src/persistence/UserWindowTitleRepository.js';
+import WindowTitleDao from '/src/persistence/UserWindowTitleDao.js';
 
 const windowTitler = new WindowTitler();
-const windowTitleRepository = new WindowTitleRepository();
+const windowTitleDao = new WindowTitleDao();
 
 async function setUserWindowTitle(title) {
   const currentWindow = await window.browser.windows.getCurrent();
@@ -12,7 +12,7 @@ async function setUserWindowTitle(title) {
 
 async function getCurrentWindowTitle() {
   const currentWindow = await window.browser.windows.getCurrent();
-  const currentWindowTitle = await windowTitleRepository.getUserWindowTitle(currentWindow.id);
+  const currentWindowTitle = await windowTitleDao.getUserWindowTitle(currentWindow.id);
 
   return currentWindowTitle;
 }
