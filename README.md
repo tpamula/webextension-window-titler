@@ -1,6 +1,9 @@
 Window Titler
 =============
 
+![downloads shield](https://img.shields.io/amo/dw/window-titler)
+![users shield](https://img.shields.io/amo/users/window-titler)
+
 ![icon](assets/icons/dark/icon-128.png)
 
 Label your windows and profiles using custom window titles.
