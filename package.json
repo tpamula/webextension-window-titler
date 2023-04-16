@@ -4,8 +4,8 @@
   "description": "![icon](icons/dark/icon-128.png)",
   "main": "src/presentation/background/background.js",
   "scripts": {
-    "start": "web-ext run --firefox=firefoxdeveloperedition || echo ** Error starting Firefox Developer Edition, do you have it installed? **" ,
-    "build": "web-ext build",
+    "start": "web-ext run --firefox=firefoxdeveloperedition || echo ** Error starting Firefox Developer Edition, do you have it installed? **",
+    "build": "web-ext build --overwrite-dest",
     "lint": "eslint \"src/**/*.js\"",
     "lint:fix": "eslint --fix \"src/**/*.js\"",
     "test": "echo \"Error: no test specified\" && exit 1"
