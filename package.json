@@ -4,7 +4,7 @@
   "description": "![icon](icons/dark/icon-128.png)",
   "main": "src/presentation/background/background.js",
   "scripts": {
-    "start": "web-ext run",
+    "start": "web-ext run --firefox=firefoxdeveloperedition || echo ** Error starting Firefox Developer Edition, do you have it installed? **" ,
     "build": "web-ext build",
     "lint": "eslint \"src/**/*.js\"",
     "lint:fix": "eslint --fix \"src/**/*.js\"",
