@@ -4,8 +4,8 @@
   "description": "![icon](icons/dark/icon-128.png)",
   "main": "src/presentation/background/background.js",
   "scripts": {
-    "start": "web-ext run",
-    "build": "web-ext build",
+    "start": "web-ext run --firefox=firefoxdeveloperedition || echo ** Error starting Firefox Developer Edition, do you have it installed? **",
+    "build": "web-ext build --overwrite-dest",
     "lint": "eslint \"src/**/*.js\"",
     "lint:fix": "eslint --fix \"src/**/*.js\"",
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -22,9 +22,9 @@
   },
   "homepage": "https://github.com/tpamula/webextension-window-titler#readme",
   "devDependencies": {
-    "eslint": "^5.16.0",
-    "eslint-config-airbnb-base": "^13.1.0",
-    "eslint-plugin-import": "^2.17.3",
-    "web-ext": "^3.0.0"
+    "eslint": "^8.38.0",
+    "eslint-config-airbnb-base": "^15.0.0",
+    "eslint-plugin-import": "^2.27.5",
+    "web-ext": "^7.6.1"
   }
 }
